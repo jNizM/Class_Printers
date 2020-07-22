@@ -1,5 +1,5 @@
 # Class_Printers
- AutoHotkey wrapper for Print Spooler API Functions [WinAPI](https://docs.microsoft.com/en-us/windows/win32/printdocs/printing-and-print-spooler-functions)
+ AutoHotkey wrapper for Print Spooler API Functions ([msdn-docs](https://docs.microsoft.com/en-us/windows/win32/printdocs/printing-and-print-spooler-functions))
 
 
 ## Examples
