@@ -112,6 +112,23 @@ class Printers
 	}
 
 
+	Properties(PrinterName, hWindow := 0)
+	{
+		static PRINTER_ACCESS_USE := 0x00000008
+
+		if (hPrinter := this.OpenHandle(PrinterName, PRINTER_ACCESS_USE))
+		{
+			if (DllCall("winspool.drv\PrinterProperties", "ptr", hWindow, "ptr", hPrinter))
+			{
+				this.CloseHandle(hPrinter)
+				return true
+			}
+			this.CloseHandle(hPrinter)
+		}
+		return false
+	}
+
+
 	SetDefault(Printer)
 	{
 		if (DllCall("winspool.drv\SetDefaultPrinter", "str", Printer))
