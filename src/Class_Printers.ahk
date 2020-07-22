@@ -33,7 +33,7 @@ class Printers
 			}
 			this.CloseHandle(hPrinter)
 		}
-		return A_LastError
+		return false
 	}
 
 
