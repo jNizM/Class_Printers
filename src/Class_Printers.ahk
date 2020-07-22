@@ -102,9 +102,9 @@ class Printers
 					PRINTER_INFO["DriverName"]  := StrGet(NumGet(addr + A_PtrSize * 4, "ptr"))
 					PRINTER_INFO["Comment"]     := StrGet(NumGet(addr + A_PtrSize * 5, "ptr"))
 					PRINTER_INFO["Location"]    := StrGet(NumGet(addr + A_PtrSize * 6, "ptr"))
+					this.CloseHandle(hPrinter)
+					return PRINTER_INFO
 				}
-				this.CloseHandle(hPrinter)
-				return PRINTER_INFO
 			}
 			this.CloseHandle(hPrinter)
 		}
