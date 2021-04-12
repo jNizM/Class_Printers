@@ -3,7 +3,7 @@
 ;
 ; Author ....: jNizM
 ; Released ..: 2020-07-19
-; Modified ..: 2020-07-22
+; Modified ..: 2021-04-12
 ; ===============================================================================================================================
 
 
@@ -39,7 +39,7 @@ class Printers
 
 	DeleteConnection(PrinterName)
 	{
-		if (DllCall("winspool.drv\DeleteConnection", "str", PrinterName))
+		if (DllCall("winspool.drv\DeletePrinterConnection", "str", PrinterName))
 			return true
 		return false
 	}
