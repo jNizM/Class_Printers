@@ -1,0 +1,34 @@
+[size=150][b]Examples[/b][/size]
+[hr][/hr]
+[b]Retrieves the printer name of the default printer for the current user on the local computer.[/b]
+[code]MsgBox % Printers.GetDefault()[/code]
+
+
+[b]Sets the printer name of the default printer for the current user on the local computer.[/b]
+[code]Printers.SetDefault("\\192.168.10.1\PRINTER_A")[/code]
+
+
+[b]Adds a connection to the specified printer for the current user.[/b]
+[code]Printers.AddConnection("\\192.168.10.1\PRINTER_A")[/code]
+
+
+[b]Deletes a connection to a printer that was established by a call to AddPrinterConnection or ConnectToPrinterDlg.[/b]
+[code]Printers.DeleteConnection("\\192.168.10.1\PRINTER_A")[/code]
+
+
+[b]Deletes the specified printer object.[/b]
+[code]Printers.Delete("HP DeskJet")[/code]
+
+
+[b]Enumerates available printers, print servers, domains, or print providers.[/b]
+[code]; 0x2 -> LOCAL | 0x4 -> CONNECTIONS
+for k, v in Printers.Enum(0x2|0x4)
+    MsgBox % v.PrinterName[/code]
+
+[b]Retrieves information about a specified printer.[/b]
+[code]MsgBox % Printers.GetInfo("\\192.168.10.1\PRINTER_A").Location[/code]
+
+
+[size=150][b]Todo[/b][/size]
+[hr][/hr]
+- tba
